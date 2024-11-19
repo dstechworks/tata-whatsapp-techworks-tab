@@ -685,7 +685,7 @@ async function sendMessage() {
                     "dhanushId": x['Dhanush Id'] ? x['Dhanush Id'] : 'NA',
                     "tlNum": x['TL Mobile No'],
                     "storeNum": x['Store Number'],
-                    "buttonUrl": `?storename=${(x['Store Name']).toString().split(' ').join('')}&name=${(x['AE Name']).split(' ').join('')}&number=${x['AE Mobile No']}&dhanushid=${x['Dhanush Id']}&branch=${x['Branch']}&deviceid=${x['Device ID']}&type=tab`
+                    "buttonUrl": `complaint.html?storename=${(x['Store Name']).toString().split(' ').join('')}&name=${(x['AE Name']).split(' ').join('')}&number=${x['AE Mobile No']}&dhanushid=${x['Dhanush Id']}&branch=${x['Branch']}&deviceid=${x['Device ID']}&type=tab`
                 }
 
                 let aeMsgRes = await ae_msg(obj.phoneNum, obj.storeName, obj.dhanushId, obj.tlNum, obj.storeNum, obj.buttonUrl);
@@ -705,7 +705,7 @@ async function sendMessage() {
                     "storeName": x['Store Name'],
                     "dhanushId": x['Dhanush Id'] ? x['Dhanush Id'] : 'NA',
                     "storeNum": x['Store Number'],
-                    "buttonUrl": `?storename=${(x['Store Name']).toString().split(' ').join('')}&name=${(x['TL Name']).split(' ').join('')}&number=${x['TL Mobile No']}&dhanushid=${x['Dhanush Id']}&branch=${x['Branch']}&deviceid=${x['Device ID']}&type=tab`
+                    "buttonUrl": `complaint.html?storename=${(x['Store Name']).toString().split(' ').join('')}&name=${(x['TL Name']).split(' ').join('')}&number=${x['TL Mobile No']}&dhanushid=${x['Dhanush Id']}&branch=${x['Branch']}&deviceid=${x['Device ID']}&type=tab`
                 }
 
                 let tlMsgRes = await tl_msg(obj.phoneNum, obj.storeName, obj.dhanushId, obj.storeNum, obj.buttonUrl);
