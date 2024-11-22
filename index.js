@@ -478,6 +478,8 @@ async function sendMessage() {
                 'TL Mobile No': numberHelper(x['TL Mobile No']),
                 'AE Name': nameHelper(x['AE Name']),
                 'AE Mobile No': numberHelper(x['AE Mobile No']),
+                'AE 2 Name': nameHelper(x['AE 2 Name']),
+                'AE 2 Mobile No': numberHelper(x['AE 2 Mobile No']),
             })
         }
     })
@@ -690,6 +692,27 @@ async function sendMessage() {
 
                 let aeMsgRes = await ae_msg(obj.phoneNum, obj.storeName, obj.dhanushId, obj.tlNum, obj.storeNum, obj.buttonUrl);
                 console.log(i, "AE --->", aeMsgRes);
+                ++tabTotalCount;
+                await delay(500);
+            }
+
+            // Ae 2 Logic
+            if (x['AE 2 Name'] && x['AE 2 Mobile No'] && x['TL Name'] && x['TL Mobile No']) {
+                let messageBodyAE2 = `Hi ! Tablet is not working at the following store\nStore Name: ${x['Store Name']}\nDhanush ID: ${x['Dhanush Id']}\nTL Number: ${x['TL Mobile No']}\nStore Number: ${x['Store Number']}`;
+                // console.log(`${x['AE Mobile No']}`, "\n")
+                // console.log(messageBodyAE2)
+
+                let obj = {
+                    "phoneNum": `+91${x['AE 2 Mobile No']}`,
+                    "storeName": x['Store Name'],
+                    "dhanushId": x['Dhanush Id'] ? x['Dhanush Id'] : 'NA',
+                    "tlNum": x['TL Mobile No'],
+                    "storeNum": x['Store Number'],
+                    "buttonUrl": `complaint.html?storename=${(x['Store Name']).toString().split(' ').join('')}&name=${(x['AE 2 Name']).split(' ').join('')}&number=${x['AE 2 Mobile No']}&dhanushid=${x['Dhanush Id']}&branch=${x['Branch']}&deviceid=${x['Device ID']}&type=tab`
+                }
+
+                let ae2MsgRes = await ae_msg(obj.phoneNum, obj.storeName, obj.dhanushId, obj.tlNum, obj.storeNum, obj.buttonUrl);
+                console.log(i, "AE --->", ae2MsgRes);
                 ++tabTotalCount;
                 await delay(500);
             }
