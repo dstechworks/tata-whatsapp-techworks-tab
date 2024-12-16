@@ -409,14 +409,11 @@ async function sendMessage() {
         "E": {
             "Satyendra Singh": "9915440705",
             "Jupiter Guha": "9163323485",
-            "Chanchal Mukherjee": "9831873270",
-            //"Nikhil Kapoor": "9121017082",
             "Surajit Ghosh": "8585091444",
             "Vishnu": "9790999093"
         },
         "W": {
             "Pankaj Swahney": "8527535300",
-            "Chanchal Mukherjee": "9831873270",
             "Vinit Agarwal": "7087685878",
             "Mudit Bagla": "9831055257"
         }
